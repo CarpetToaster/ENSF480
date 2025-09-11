@@ -1,3 +1,11 @@
+/*
+* File Name: dictionaryList.cpp
+* Assignment: Lab 1 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 15, 2025
+*/
+
+
 #include <assert.h>
 #include <iostream>
 #include <stdlib.h>

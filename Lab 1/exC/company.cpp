@@ -1,3 +1,11 @@
+/*
+* File Name: company.cpp
+* Assignment: Lab 1 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 15, 2025
+*/
+
+
 #include <string>
 #include <vector>
 using namespace std;
@@ -40,7 +48,7 @@ class Employee{
             bool suspended; 
             bool retired;
             bool fired;
-        }typedef state;
+        }state;
         //PhoneNumber phoneNumber --Not in original comments of exC but I think this would be good to have and justifies the PhoneNumber class.
     };
 

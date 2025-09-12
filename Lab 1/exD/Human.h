@@ -35,7 +35,7 @@ public:
 
     //Setters
     void set_name(const char* newName);
-    void set_pos(double a, double b);
+    void set_location(double a, double b);
 
     //Getters
     const char* get_name() const;

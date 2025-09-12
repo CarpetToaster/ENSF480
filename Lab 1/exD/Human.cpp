@@ -11,7 +11,7 @@
 using namespace std;
 
 void Human::copy(const Human& source){
-    set_pos(source.location.get_x(), source.location.get_y());
+    set_location(source.location.get_x(), source.location.get_y());
 
     name = new char[strlen(source.name) + 1];
     strcpy(name, source.name);
@@ -21,13 +21,13 @@ Human::Human(){
     name = new char[1];
     name[0] = '\0';
 
-    set_pos(0, 0);
+    set_location(0, 0);
 }
 
 Human::Human(const char* setName, double x, double y){
     name = new char[strlen(setName) + 1];
     strcpy(name, setName);
-    set_pos(x, y);
+    set_location(x, y);
 }
 
 Human::Human(const Human& source){
@@ -52,7 +52,7 @@ void Human::set_name(const char* newName){
     strcpy(name, newName);
 }
 
-void Human::set_pos(double a, double b){
+void Human::set_location(double a, double b){
     location.set_x(a);
     location.set_y(b);
 }

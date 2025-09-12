@@ -13,7 +13,6 @@ using namespace std;
 void Human::copy(const Human& source){
     set_pos(source.location.get_x(), source.location.get_y());
 
-    delete [] name;
     name = new char[strlen(source.name) + 1];
     strcpy(name, source.name);
 }
@@ -37,6 +36,7 @@ Human::Human(const Human& source){
 
 Human& Human::operator =(Human& rhs){
     if (this != &rhs){
+        delete [] name;
         copy(rhs);
     }
     return *this;

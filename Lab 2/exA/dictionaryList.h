@@ -126,7 +126,7 @@ public:
 
     bool operator ==(const DictionaryList& list);
 
-    Datum& operator [](int index);
+    const Datum& operator [](int index);
 
     /******************************************************************/
 

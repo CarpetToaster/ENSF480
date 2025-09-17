@@ -173,10 +173,6 @@ DictionaryList::DictionaryList(const DictionaryList& source):sizeM(source.sizeM)
 
     //Adjust cursor to match source
     cursorM = headM;
-    while (cursorM -> keyM < source.cursorM -> keyM){
-        cursorM = cursorM -> nextM;
-    }
-    
 }
 
 DictionaryList& DictionaryList::operator =(const DictionaryList& rhs)
@@ -301,11 +297,23 @@ ostream& operator <<(ostream& out, const DictionaryList& list){
 //     return 0;
 // }
 
-Datum& DictionaryList::operator [](int index){
-    const Node* temp = headM;
-    for (int i = 0; i < index; i++){
-        temp = temp -> nextM;
+const Datum& DictionaryList::operator [](int index){
+    int original_cursor_key;
+    if (cursor_ok()){
+        original_cursor_key = cursor_key();
     }
-    Datum that = temp -> datumM;
-    return that;
+    else{
+        original_cursor_key = 0;
+    }
+    assert((index >= 0 && index < size()));
+    
+    go_to_first();
+    for(int i = 0; i < index; i++){
+        step_fwd();
+    }
+    const Datum& ret = cursor_datum();
+
+    find(original_cursor_key);
+    return ret;
+    
 }

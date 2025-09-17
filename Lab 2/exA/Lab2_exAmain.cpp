@@ -197,7 +197,7 @@ void test_operator_overloading(DictionaryList& dl)
     char c = dl.cursor_datum()[1];
     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
     
-    //dl.cursor_datum()[1] = 'o';
+    // dl.cursor_datum()[1] = 'o'; //const Datum& cannot be changed.
     c = dl.cursor_datum()[1];
     cout << endl << "The socond element of "  << dl.cursor_datum() << " is: " << c;
 

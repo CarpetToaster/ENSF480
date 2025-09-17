@@ -20,7 +20,7 @@ void test_operator_overloading(DictionaryList& dl);
 int main()
 {
   DictionaryList dl = dictionary_tests();
-#if 0
+#if 1
  test_operator_overloading(dl);
 #endif
   return 0;

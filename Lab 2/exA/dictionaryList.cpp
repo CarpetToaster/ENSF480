@@ -276,32 +276,36 @@ ostream& operator <<(ostream& out, const DictionaryList& list){
     return out;
 }
 
-bool DictionaryList::operator >=(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator >=(const DictionaryList& list){
+//     return 0;
+// }
 
-bool DictionaryList::operator <=(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator <=(const DictionaryList& list){
+//     return 0;
+// }
 
 
-bool DictionaryList::operator !=(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator !=(const DictionaryList& list){
+//     return 0;
+// }
 
-bool DictionaryList::operator >(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator >(const DictionaryList& list){
+//     return 0;
+// }
 
-bool DictionaryList::operator <(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator <(const DictionaryList& list){
+//     return 0;
+// }
 
-bool DictionaryList::operator ==(const DictionaryList& list){
-    return 0;
-}
+// bool DictionaryList::operator ==(const DictionaryList& list){
+//     return 0;
+// }
 
 Datum& DictionaryList::operator [](int index){
-    string that = string("awoowoo");;
+    const Node* temp = headM;
+    for (int i = 0; i < index; i++){
+        temp = temp -> nextM;
+    }
+    Datum that = temp -> datumM;
     return that;
 }

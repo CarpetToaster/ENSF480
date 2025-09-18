@@ -112,11 +112,8 @@ public:
     // REQUIRES: open output stream and a DictionaryList object.
 
     bool operator >=(const DictionaryList& list);
-    // PROMISES: returns 1 if Node Datum on cursor's string is >= other's string
-    // REQUIRES: cursor_ok() for this and other
 
     bool operator <=(const DictionaryList& list);
-
 
     bool operator !=(const DictionaryList& list);
 

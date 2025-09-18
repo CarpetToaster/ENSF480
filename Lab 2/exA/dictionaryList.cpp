@@ -42,7 +42,7 @@ const int& DictionaryList::cursor_key() const
     return cursorM->keyM;
 }
 
-const Datum& DictionaryList::cursor_datum() const
+Datum& DictionaryList::cursor_datum() const
 {
     assert(cursor_ok());
     return cursorM->datumM;
@@ -280,7 +280,6 @@ ostream& operator <<(ostream& out, const DictionaryList& list){
 //     return 0;
 // }
 
-
 // bool DictionaryList::operator !=(const DictionaryList& list){
 //     return 0;
 // }
@@ -297,7 +296,7 @@ ostream& operator <<(ostream& out, const DictionaryList& list){
 //     return 0;
 // }
 
-const Datum& DictionaryList::operator [](int index){
+Datum& DictionaryList::operator [](int index){
     int original_cursor_key;
     if (cursor_ok()){
         original_cursor_key = cursor_key();
@@ -311,7 +310,7 @@ const Datum& DictionaryList::operator [](int index){
     for(int i = 0; i < index; i++){
         step_fwd();
     }
-    const Datum& ret = cursor_datum();
+    Datum& ret = cursor_datum();
 
     find(original_cursor_key);
     return ret;

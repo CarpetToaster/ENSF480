@@ -65,7 +65,7 @@ public:
     // REQUIRES: cursor_ok()
     // PROMISES: Returns key of key/datum pair to which cursor is attached.
     
-    const Datum& cursor_datum() const;
+    Datum& cursor_datum() const;
     // REQUIRES: cursor_ok()
     // PROMISES: Returns datum of key/datum pair to which cursor is attached.
     
@@ -126,7 +126,7 @@ public:
 
     bool operator ==(const DictionaryList& list);
 
-    const Datum& operator [](int index);
+    Datum& operator [](int index);
 
     /******************************************************************/
 

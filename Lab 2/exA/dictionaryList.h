@@ -127,6 +127,8 @@ public:
     bool operator ==(const DictionaryList& list);
 
     Datum& operator [](int index);
+    // PROMISES: returns a reference to the datum at the index
+    // REQUIRES: index >= 0 && index < this.size()
 
     /******************************************************************/
 

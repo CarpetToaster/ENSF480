@@ -18,8 +18,19 @@ public:
 
     const char* get_name() const;
 
+    // Setters
+    void set_name(const char* name);
+
+    void set_location(double a, double b);
+
     // User functions 
-    
+    virtual void display() const;
+
+    double distance(Shape& other);
+
+    static double distance(Shape& first, Shape& second);
+
+    void move(double dx, double dy);
 };
 
 #endif

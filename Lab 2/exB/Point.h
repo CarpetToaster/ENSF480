@@ -40,7 +40,7 @@ public:
 
     static int counter();
 
-    void display();
+    void display() const;
 };
 
 #endif

@@ -41,10 +41,10 @@ double Point::distance(const Point& other) const{
 }
 
 double Point::distance(const Point& first, const Point& second){
-    double x_diff = second.x - first.x;
-    double y_diff = second.y - first.y;
+    double x_diff = pow(second.x - first.x, 2);
+    double y_diff = pow(second.y - first.y, 2);
 
-    double dist = sqrt(pow(x_diff, 2) + pow(y_diff, 2));
+    double dist = sqrt(x_diff + y_diff);
     return dist;
 }
 
@@ -52,7 +52,7 @@ int Point::counter(){
     return count;
 }
 
-void Point::display(){
+void Point::display() const{
     cout << fixed; // floatfield manipulator set
     cout << setprecision(2); // precision now just affects anything after decimal.
     cout << "X-coordinate: " << x << endl << "Y-coordinate: " << y << endl;

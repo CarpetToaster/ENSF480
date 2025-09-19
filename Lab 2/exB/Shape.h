@@ -36,7 +36,7 @@ public:
     */
 
     // Destructor for Shape::shapeName
-    ~Shape();
+    virtual ~Shape();
 
 
     // Getters

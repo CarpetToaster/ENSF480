@@ -23,10 +23,10 @@ void Rectangle::set_side_b(double len){
 }
 
 void Rectangle::display() const{
-    cout << "Rectangle Name: " << shapeName << endl;
+    cout << "\nRectangle Name: " << shapeName << endl;
     origin.display();
     cout << "Side a: " << side_a << endl;
     cout << "Side b: " << side_b << endl;
     cout << "Area: " << area() << endl;
-    cout << "Perimeter" << perimeter() << endl;
+    cout << "Perimeter: " << perimeter() << endl;
 }

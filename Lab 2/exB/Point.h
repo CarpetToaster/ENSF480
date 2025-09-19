@@ -13,6 +13,7 @@ public:
     Point(double a, double b);
     // REQUIRES: two doubles a and b
 
+
     //Getters
     double get_x() const;
     // PROMISES: returns the value of the x-coordinate
@@ -25,22 +26,37 @@ public:
     int get_id() const;
     // PROMISES: returns the id of this as an integer
 
+
     //Setters
     void set_y(double val);
-    // PROMISES: sets the y value 
+    // PROMISES: sets the y value to the passed value
+    // REQUIRES: a valid double
 
     void set_x(double val);
+    // PROMISES: sets the x value to the passed value
+    // REQUIRES: a valid double
 
     void set_location(double a, double b);
+    // PROMISES: sets the x = arg1 and y = arg2;
+    // REQUIRES: both a and b are valid doubles
 
+    
     //User functions
     double distance(const Point& other) const;
+    // PROMISES: returns the distance between this point and another
+    // REQUIRES: this point and the other are valid points
 
     static double distance(const Point& first, const Point& second);
+    // PROMISES: returns the distance between two point objects
+    // REQUIRES: two valid point objects
 
     static int counter();
+    // PROMISES: returns the number of points to have ever existed in the current runtime
 
     void display() const;
+    // PROMISES: displays this point object in the format:
+    // X-coordinate: ######.##
+    // Y-coordinate: ######.##
 };
 
 #endif

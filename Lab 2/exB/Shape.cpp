@@ -3,9 +3,37 @@
 #include <cstring>
 using namespace std;
 
+void Shape::copy(const Shape& other){
+    if (other.shapeName != nullptr){
+        shapeName = new char[strlen(other.shapeName) + 1];
+        strcpy(shapeName, other.shapeName);
+    }
+    else{
+        shapeName = new char[2];
+        strcpy("", shapeName);
+    }
+
+}
+
 Shape::Shape(double a, double b, const char* name):origin(a, b){
+    if (name == nullptr){
+        name = "";
+    }
     shapeName = new char[strlen(name) + 1];
     strcpy(shapeName, name);
+}
+
+Shape::Shape(const Shape& source)
+    :origin(source.origin.get_x(), source.origin.get_y()){
+    copy(source);
+}
+
+Shape& Shape::operator =(const Shape& rhs){
+    if (this != &rhs){
+        delete [] shapeName;
+        copy(rhs);
+    }
+    return *this;
 }
 
 Shape::~Shape(){
@@ -21,6 +49,9 @@ const char* Shape::get_name() const{
 }
 
 void Shape::set_name(const char* name){
+    if (name == nullptr){
+        name = "";
+    }
     delete [] shapeName;
     name = new char[strlen(name) + 1];
     strcpy(shapeName, name);
@@ -31,7 +62,7 @@ void Shape::set_location(double a, double b){
 }
 
 void Shape::display() const{
-    cout << "Shape Name: " << shapeName << endl;
+    cout << "\nShape Name: " << shapeName << endl;
     origin.display();
 }
 

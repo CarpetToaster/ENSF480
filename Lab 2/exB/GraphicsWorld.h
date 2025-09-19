@@ -4,7 +4,8 @@
 
 class GraphicsWorld{
 public:
-    void run();
+    static void run();
+    // Test function for Shape and all of it's descendants
 };
 
 

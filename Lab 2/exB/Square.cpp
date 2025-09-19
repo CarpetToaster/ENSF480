@@ -22,9 +22,9 @@ void Square::set_side_a(double len){
 }
 
 void Square::display() const{
-    cout << "Square Name: " << shapeName << endl;
+    cout << "\nSquare Name: " << shapeName << endl;
     origin.display();
     cout << "Side a: " << side_a << endl;
     cout << "Area: " << area() << endl;
-    cout << "Perimeter" << perimeter() << endl;
+    cout << "Perimeter: " << perimeter() << endl;
 }

@@ -1,3 +1,10 @@
+/*
+* File Name: Rectangle.cpp
+* Assignment: Lab 2 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
+
 #include "Rectangle.h"
 #include <iostream>
 using namespace std;

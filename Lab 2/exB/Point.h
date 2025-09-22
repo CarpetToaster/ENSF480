@@ -1,3 +1,10 @@
+/*
+* File Name: Point.h
+* Assignment: Lab 2 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
+
 #ifndef POINT_H
 #define POINT_H
 

@@ -1,3 +1,10 @@
+/*
+* File Name: Shape.h
+* Assignment: Lab 2 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
+
 #ifndef SHAPE_H
 #define SHAPE_H
 #include "Point.h"

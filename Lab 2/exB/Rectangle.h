@@ -1,3 +1,10 @@
+/*
+* File Name: Rectangle.h
+* Assignment: Lab 2 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
+
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 #include "Square.h"

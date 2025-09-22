@@ -1,5 +1,9 @@
-// dictionaryList.h
-// Lab 1 - Exercise B
+/*
+* File Name: dictionaryList.h
+* Assignment: Lab 2 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
 
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
@@ -111,17 +115,20 @@ public:
     // PROMISES: outputs each key datum pair in a newline to the specified outputs stream, and returns the same output stream. 
     // REQUIRES: open output stream and a DictionaryList object.
 
-    bool operator >=(const DictionaryList& list);
+    /* the follwoing functions weren't required as all of the comparisons in Lab2_exAmain.cpp are between 
+    string and string, where they are already defined */
+    
+    // bool operator >=(const DictionaryList& list);
 
-    bool operator <=(const DictionaryList& list);
+    // bool operator <=(const DictionaryList& list);
 
-    bool operator !=(const DictionaryList& list);
+    // bool operator !=(const DictionaryList& list);
 
-    bool operator >(const DictionaryList& list);
+    // bool operator >(const DictionaryList& list);
 
-    bool operator <(const DictionaryList& list);
+    // bool operator <(const DictionaryList& list);
 
-    bool operator ==(const DictionaryList& list);
+    // bool operator ==(const DictionaryList& list);
 
     Datum& operator [](int index);
     // PROMISES: returns a reference to the datum at the index

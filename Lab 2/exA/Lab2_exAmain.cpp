@@ -1,5 +1,9 @@
-// Lab2_exAmain.cpp
-// Lab 2 - Exercise A
+/*
+* File Name: Lab2_exAmain.cpp
+* Assignment: Lab 2 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
 
 #include <assert.h>
 #include <iostream>

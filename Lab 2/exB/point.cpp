@@ -1,3 +1,10 @@
+/*
+* File Name: Point.cpp
+* Assignment: Lab 2 Exercise B
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 21, 2025
+*/
+
 #include <cmath>
 #include <iostream> 
 #include <iomanip>

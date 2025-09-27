@@ -4,51 +4,55 @@
 #include <iostream>
 #include <assert.h>
 #include "mystring2.h"
+#include <cstring>
 
 using namespace std;
 
-
-class Vector {
+template<class T>
+class Vector{
 public: 
 
+ 
   class VectIter{
-    friend class Vector;
+    friend class Vector<T>;
+
   private:
-    Vector *v; // points to a vector object of type T
+    Vector<T> *v; // points to a vector object of type T
     int index;    // represents the subscript number of the vector's
                   // array.
+
   public:
-    VectIter(Vector& x);
- 
-    int operator++();
+    VectIter(Vector<T>& x);
+    
+    T operator++();
     //PROMISES: increments the iterator's indes and return the 
     //          value of the element at the index position. If
     //          index exceeds the size of the array it will 
     //          be set to zero. Which means it will be circulated
     //          back to the first element of the vector.
 
-    int  operator++(int);
+    T operator++(int);
     // PRIMISES: returns the value of the element at the index
     //           position, then increments the index. If
     //           index exceeds the size of the array it will 
     //           be set to zero. Which means it will be circulated
     //           back to the first element of the vector.
 
-    int  operator--();
+    T operator--();
     // PROMISES: decrements the iterator index, and return the
     //           the value of the element at the index. If
     //           index is less than zero it will be set to the 
     //           last element in the aray. Which means it will be
     //           circulated to the last element of the vector.
 
-    int  operator--(int);
+    T operator--(int);
     // PRIMISES: returns the value of the element at the index
     //           position, then decrements the index. If
     //           index is less than zero it will be set to the 
     //           last element in the aray. Which means it will be
     //           circulated to the last element of the vector.
 
-    int operator *();
+    T operator *();
     // PRIMISES: returns the value of the element at the current 
     //           index position.
   };
@@ -56,7 +60,7 @@ public:
   Vector(int sz); 
   ~Vector();
 
-  int & operator[](int i);
+  T& operator[](int i);
   // PRIMISES: returns existing value in the ith element of 
   //           array or sets a new value to  the ith element in
   //           array. 
@@ -65,14 +69,51 @@ public:
   // PRIMISES: sorts the vector values in ascending order. 
 	
 private:
-  int *array;               // points to the first element of an array of T
+  T *array;               // points to the first element of an array of T
   int size;               // size of array
-  void swap(int&, int &); // swaps the values of two elements in array
+  void swap(T&, T&);      // swaps the values of two elements in array
 public:
 };
 
+// template<>
+// class Vector<Mystring>{
+//   private:
+//     int size();
+//     Mystring* array;
+//     void swap(Mystring& a, Mystring& b);
+//   public:
 
-void Vector::ascending_sort()
+//     void ascending_sort();
+// };
+
+template<class T>
+T Vector<T>::VectIter::operator++(){
+  index = (index + 1) % (v -> size);
+  return (*v)[index];
+}
+
+template<class T>
+T Vector<T>::VectIter::operator++(int){
+  T ret = (*v)[index];
+  index = (index + 1) % (v -> size);
+  return ret;
+}
+
+template<class T>
+T Vector<T>::VectIter::operator--(){
+  index = (index + (v -> size) - 1) % (v -> size);
+  return (*v)[index];
+}
+
+template<class T>
+T Vector<T>::VectIter::operator--(int){
+  T ret = (*v)[index];
+  index = (index + (v -> size) - 1) % (v -> size);  
+  return ret;
+}
+
+template<class T>
+void Vector<T>::ascending_sort()
 {
 	for(int i=0; i< size-1; i++)
 		for(int j=i+1; j < size; j++)
@@ -80,44 +121,65 @@ void Vector::ascending_sort()
 				swap(array[i], array[j]);
 }
 
-void Vector::swap(int& a, int& b)
+// template<>
+// void Vector<Mystring>::ascending_sort(){
+//   for(int i=0; i< size-1; i++)
+// 		for(int j=i+1; j < size; j++)
+// 			if(strcmp((const char*)array[i].c_str(), (const char*)array[j].c_str()) > 0) 
+// 				swap(array[i], array[j]);                                                  
+// }                                                                                   
+// another option is to add operator < and > to Mystring
+// This would be a better implementation as Vector cannot accomodate other 
+// classes that have a char* member
+
+template<>
+void Vector<const char*>::ascending_sort(){
+  for(int i=0; i< size-1; i++)
+		for(int j=i+1; j < size; j++)
+			if(strcmp(array[i], (const char*)array[j]) > 0) 
+				swap(array[i], array[j]);      
+}
+
+template<class T>
+void Vector<T>::swap(T& a, T& b)
 {
-	int tmp = a;
+	T tmp = a;
 	a = b;
 	b = tmp;
 }
 
-int Vector::VectIter::operator *()
+template<class T>
+T Vector<T>::VectIter::operator *()
 {
   return v -> array[index];
 }
 
-
-Vector::VectIter::VectIter(Vector& x)
+template<class T>
+Vector<T>::VectIter::VectIter(Vector<T>& x)
 {
   v = &x;
   index = 0;
 }
 
 
-
-Vector::Vector(int sz)
+template<class T>
+Vector<T>::Vector(int sz)
 {
   size=sz;
-  array = new int [sz];
+  array = new T[sz];
   assert (array != NULL);
 }
 
-
-Vector::~Vector()
+template<class T>
+Vector<T>::~Vector()
 {
   delete [] array;
   array = NULL;
 }
 
 
-
-int & Vector ::operator [] (int i)
+template<class T>
+T& Vector<T>::operator[](int i)
 {
   return array[i];
 }
@@ -126,19 +188,28 @@ int & Vector ::operator [] (int i)
 int main()
 {
 
- Vector x(3);
+ Vector<int> x(3);
  x[0] = 999;
  x[1] = -77;
  x[2] = 88;
 
- Vector::VectIter iter(x);
+ Vector<int>::VectIter iter(x);
 
  cout << "\n\nThe first element of vector x contains: " << *iter; 
+
+ Vector<const char*> strung(2);
+ strung[0] = "HAHAHA";
+ strung[1] = "EVIL";
+
+ Vector<const char*>::VectIter iter2(strung);
+
+ cout <<"\n\nThe first element of vector strung contains: " << iter2++ << endl;
+ cout <<"\n\nThe Second element of vector strung contains: " << iter2++ << endl;
 
  // the code between the  #if 0 and #endif is ignored by
  // compiler. If you change it to #if 1, it will be compiled
  
-#if 0
+#if 1
 	cout << "\nTesting an <int> Vector: " << endl;
 	
 	cout << "\n\nTesting sort";
@@ -165,7 +236,7 @@ int main()
 	Vector<Mystring> y(3);
 	y[0] = "Bar";
 	y[1] = "Foo";
-	y[2] = "All";;
+	y[2] = "All";
 	
 	Vector<Mystring>::VectIter iters(y);
 	
@@ -191,7 +262,7 @@ int main()
 	Vector<const char*> z(3);
 	z[0] = "Orange";
 	z[1] = "Pear";
-	z[2] = "Apple";;
+	z[2] = "Apple";
 	
 	Vector<const char*>::VectIter iterchar(z);
 	

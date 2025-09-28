@@ -1,3 +1,10 @@
+/*
+* File Name: Circle.h
+* Assignment: Lab 3 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
+
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include "Shape.h"

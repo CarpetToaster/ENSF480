@@ -1,3 +1,10 @@
+/*
+* File Name: CurveCut.h
+* Assignment: Lab 3 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
+
 #ifndef CURVECUT_H
 #define CURVECUT_H
 #include "Circle.h"

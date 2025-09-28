@@ -1,8 +1,8 @@
 /*
 * File Name: Point.h
-* Assignment: Lab 2 Exercise B
+* Assignment: Lab 3 Exercise A
 * Completed by: Ayre Ibrahim
-* Submission Date: Sept 21, 2025
+* Submission Date: Sept 28, 2025
 */
 
 #ifndef POINT_H

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/david/Desktop/3rd Year/ENSF480/Lab 3/exA",
+      "program": "c:/Users/david/Desktop/3rd Year/ENSF480/Lab 3/exA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

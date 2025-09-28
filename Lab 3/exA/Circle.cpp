@@ -1,3 +1,10 @@
+/*
+* File Name: Circle.cpp
+* Assignment: Lab 3 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
+
 #include <iostream>
 #include "Circle.h"
 #include <math.h>

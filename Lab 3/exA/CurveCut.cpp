@@ -1,3 +1,10 @@
+/*
+* File Name: CurveCut.cpp
+* Assignment: Lab 3 Exercise A
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
+
 #include "CurveCut.h"
 #include <iostream> 
 #include <math.h>

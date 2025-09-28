@@ -1,6 +1,13 @@
 // LookupTable.h
 // ENSF 480 - Lab 3, Ex C
 
+/*
+* File Name: LookupTable.h
+* Assignment: Lab 3 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
+
 #ifndef LOOKUPTABLE_H
 #define LOOKUPTABLE_H
 #include <iostream>

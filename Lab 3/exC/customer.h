@@ -1,5 +1,12 @@
 // ENSF 480 - Lab 3, Ex C
 // M. Moussavi
+
+/*
+* File Name: customer.h
+* Assignment: Lab 3 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
 #ifndef CUSTOMER
 #define CUSTOMER
 #include <iostream>

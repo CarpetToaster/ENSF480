@@ -1,6 +1,12 @@
 //File: mystring2.h
 // ENSF 480 - Lab 3
 
+/*
+* File Name: mystring2.cpp
+* Assignment: Lab 3 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
 
 #ifndef MYSTRING_H
 #define MYSTRING_H

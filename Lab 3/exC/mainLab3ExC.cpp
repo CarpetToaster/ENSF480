@@ -2,6 +2,12 @@
 // ENSF 480 - Lab 3, Ex C
 // M. Moussavi
 
+/*
+* File Name: mainLab3ExC.cpp
+* Assignment: Lab 3 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
 #include <assert.h>
 #include <iostream>
 #include "lookupTable.h"

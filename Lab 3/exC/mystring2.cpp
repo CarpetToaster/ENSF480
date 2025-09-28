@@ -1,6 +1,13 @@
 //  mystring2.cpp
 // ENSF 480 - Lab 3
 // M. Moussavi
+
+/*
+* File Name: mystring2.cpp
+* Assignment: Lab 3 Exercise C
+* Completed by: Ayre Ibrahim
+* Submission Date: Sept 28, 2025
+*/
 #include "mystring2.h"
 #include <string.h>
 #include <iostream>
